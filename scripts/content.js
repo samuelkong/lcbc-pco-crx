@@ -41,7 +41,7 @@ const changeLanguage = function() {
 
 	changeLanguageLabel("phone_number", "phone-number");
 
-	changeLanguageFieldDescription("phone_type", "mobile-number-that-we-can-call");
+	changeLanguageFieldDescription("phone_number", "mobile-number-that-we-can-call");
 
 	changeLanguageSelect("phone_type", ["mobile", "home", "work", "other"]);
 
