@@ -146,21 +146,14 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 
 	if (jQuery(".turnstile-form").length && !jQuery("#lcbcLogoWrapper").length) {
 		const $logoWrapper = jQuery("<div>", {
-			id: "lcbcLogoWrapper",
-			css: {
-				"text-align": "center"
-			}
+			id: "lcbcLogoWrapper"
 		});
 
 		const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
 
 		const $logo = jQuery("<img>", {
 			src: horizonalLogoUrl,
-			alt: "Laguna Chinese Baptist Church",
-			css: {
-				"margin-bottom": "1.5em",
-				"width": "250px"
-			}
+			alt: "Laguna Chinese Baptist Church"
 		})
 
 		$logoWrapper.append($logo);

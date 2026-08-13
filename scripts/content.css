@@ -11,3 +11,10 @@ header.Header {
 #lcbcLanguageChanger img {
 	width: 48px;
 }
+#lcbcLogoWrapper {
+	text-align: center;
+}
+#lcbcLogoWrapper img{
+	margin-bottom: 1.5em;
+	width: 250px;
+}
