@@ -23,7 +23,7 @@
 	"action": {
 		"default_icon": "images/icon-128.png",
 		"default_popup": "popup/popup.html"
-	}
+	},
 	//"options_page": "",
 	//"options_ui": {},
 	//"side_panel": {},
@@ -31,7 +31,12 @@
 	// Background, Scripts & Net Request Rules
 
 	//"background": {},
-	//"content_scripts": [],
+	"content_scripts": [
+		{
+			"matches": ["https://lagunabaptist.churchcenter.com/people/forms/*"],
+			"js" : ["lib/jquery-4.0.0.min.js", "scripts/content.js"]
+		}
+	]
 	//"declarative_net_request": {},
 
 	// Permissions & Security
