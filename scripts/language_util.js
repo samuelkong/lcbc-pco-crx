@@ -109,7 +109,7 @@ class LanguageUtil {
 		
 	};
 
-	static get(key, locale) {
+	static get(key) {
 		return this.dictionary[key][locale];
 	}
 }
