@@ -7,10 +7,38 @@ const observer = new MutationObserver(() => {
 		return;
 	}
 
-	const $navigation = jQuery("nav");
+	// Hide header (removing will cause errors)
 
-	if ($navigation.length) {
-		$navigation.hide();
+	const $header = jQuery("header.Header");
+
+	if ($header.length) {
+		$header.hide();
+	}
+
+	// Add back church logo
+
+	if (!jQuery("#lcbcLogoWrapper").length) {
+		const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
+
+		const $logo = jQuery("<img>", {
+			src: horizonalLogoUrl,
+			alt: "Laguna Chinese Baptist Church",
+			css: {
+				"margin-bottom": "1.5em",
+				"width": "250px"
+			}
+		})
+
+		const $logoWrapper = jQuery("<div>", {
+			id: "lcbcLogoWrapper",
+			css: {
+				"text-align": "center"
+			}
+		});
+
+		$logoWrapper.append($logo);
+
+		jQuery(".turnstile-form").before($logoWrapper);
 	}
 });
 

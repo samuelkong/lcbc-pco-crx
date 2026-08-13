@@ -2,4 +2,4 @@
 Chrome extension to customize LCBC children registration form.
 
 ## Features
-* Removes navigation menu
+* Removes header & navigation menu

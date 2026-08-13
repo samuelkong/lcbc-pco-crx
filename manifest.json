@@ -36,7 +36,7 @@
 			"matches": ["https://lagunabaptist.churchcenter.com/people/forms/*"],
 			"js" : ["lib/jquery-4.0.0.min.js", "scripts/content.js"]
 		}
-	]
+	],
 	//"declarative_net_request": {},
 
 	// Permissions & Security
@@ -55,7 +55,12 @@
 
 	// Resources & Shortcuts
 
-	//"web_accessible_resources": []
+	"web_accessible_resources": [
+		{
+			"matches": ["https://lagunabaptist.churchcenter.com/*"],
+			"resources": ["images/*"]
+		}
+	]
 	//"commands": {},
 
 	// System & Deployment Requirements
