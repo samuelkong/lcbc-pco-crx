@@ -113,6 +113,22 @@ const changeLanguage = function(locale) {
 	jQuery('button[type="submit"]').text(LanguageUtil.get("submit", locale))
 }
 
+const languageButton = function(label, locale) {
+	return jQuery("<button>", {
+		type: "button",
+		text: label,
+		class: "btn secondary-btn minor-btn",
+		css: {
+			"clear": "left",
+			"display": "block",
+			"margin-bottom": "0.3em"
+		},
+		click: function() {
+			changeLanguage(locale);
+		}
+	});
+}
+
 const observer = new MutationObserver((mutations, observer) => {
 	if (!chrome.runtime?.id) {
 		observer.disconnect();
@@ -176,47 +192,9 @@ const observer = new MutationObserver((mutations, observer) => {
 
 	$languageWrapper.append($languageIcon);
 
-	const languageBtnCss = {
-		"clear": "left",
-		"display": "block",
-		"margin-bottom": "0.3em"
-	};
-
-	const $languageEnUsBtn = jQuery("<button>", {
-		type: "button",
-		text: "ENGLISH",
-		class: "btn secondary-btn minor-btn",
-		css: languageBtnCss,
-		click: function() {
-			changeLanguage("en-US");
-		}
-	});
-
-	$languageWrapper.append($languageEnUsBtn);
-
-	const $languageZhHkBtn = jQuery("<button>", {
-		type: "button",
-		text: "繁體中文",
-		class: "btn secondary-btn minor-btn",
-		css: languageBtnCss,
-		click: function() {
-			changeLanguage("zh-HK");
-		}
-	});
-
-	$languageWrapper.append($languageZhHkBtn);
-
-	const $languageZhCnBtn = jQuery("<button>", {
-		type: "button",
-		text: "简体中文",
-		class: "btn secondary-btn minor-btn",
-		css: languageBtnCss,
-		click: function() {
-			changeLanguage("zh-CN");
-		}
-	});
-
-	$languageWrapper.append($languageZhCnBtn);
+	$languageWrapper.append(languageButton("ENGLISH", "en-US"));
+	$languageWrapper.append(languageButton("繁體中文", "zh-HK"));
+	$languageWrapper.append(languageButton("简体中文", "zh-CN"));
 });
 
 observer.observe(
