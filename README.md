@@ -1,2 +1,2 @@
-# lcbc-pco-crx
-Chrome extension for LCBC children registration form
+# LCBC PCO Chrome Extension
+Chrome extension to customize LCBC children registration form.
