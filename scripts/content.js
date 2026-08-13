@@ -1,7 +1,7 @@
 jQuery.noConflict();
 
 let locale = "en-US";
-let onloadChangeNeeded = 3;
+let onloadChangeNeeded = 4;
 
 const changeLanguage = function() {
 
@@ -208,7 +208,28 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 	onloadAddLogo();
 	onloadAddLanguageChanger();
 	onloadDisableNonMobilePhones();
+	onloadUpdateHouseholdDescription();
 });
+
+const onloadUpdateHouseholdDescription = function() {
+	const $householdLabel = jQuery('label[for^="household_"]');
+
+	if (!$householdLabel.length) {
+		return;
+	}
+
+	const $householdDescription = $householdLabel.parent().next();
+
+	if ($householdDescription.is(":hidden")) {
+		return;
+	}
+
+	$householdLabel.html(LanguageUtil.get("household-instructions"));
+
+	$householdDescription.hide();
+
+	onloadChangeNeeded--;
+}
 
 const setLocale = function(newLocale) {
 	locale = newLocale;
