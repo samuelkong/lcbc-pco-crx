@@ -39,7 +39,11 @@
 		},
 		{
 			"matches": ["https://lagunabaptist.churchcenter.com/people/forms/*"],
-			"js" : ["lib/jquery-4.0.0.min.js", "scripts/content.js"]
+			"js" : [
+				"lib/jquery-4.0.0.min.js",
+				"scripts/language_util.js",
+				"scripts/content.js"
+			]
 		}
 	],
 	//"declarative_net_request": {},
