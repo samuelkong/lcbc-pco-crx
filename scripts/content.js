@@ -149,10 +149,8 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 			id: "lcbcLogoWrapper"
 		});
 
-		const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
-
 		const $logo = jQuery("<img>", {
-			src: horizonalLogoUrl,
+			src: chrome.runtime.getURL("images/logo-en.png"),
 			alt: "Laguna Chinese Baptist Church"
 		})
 
