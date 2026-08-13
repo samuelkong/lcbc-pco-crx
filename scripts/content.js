@@ -7,14 +7,6 @@ const observer = new MutationObserver(() => {
 		return;
 	}
 
-	// Hide header (removing will cause errors)
-
-	const $header = jQuery("header.Header");
-
-	if ($header.length) {
-		$header.hide();
-	}
-
 	// Add back church logo
 
 	if (!jQuery("#lcbcLogoWrapper").length) {
