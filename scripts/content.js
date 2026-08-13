@@ -1,7 +1,13 @@
 jQuery.noConflict();
 
-const observer = new MutationObserver(() => {
+const observer = new MutationObserver((mutations, observer) => {
 	if (!chrome.runtime?.id) {
+		observer.disconnect();
+
+		return;
+	}
+
+	if (jQuery("#lcbcLogoWrapper").length) {
 		observer.disconnect();
 
 		return;
@@ -9,29 +15,27 @@ const observer = new MutationObserver(() => {
 
 	// Add back church logo
 
-	if (!jQuery("#lcbcLogoWrapper").length) {
-		const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
+	const $logoWrapper = jQuery("<div>", {
+		id: "lcbcLogoWrapper",
+		css: {
+			"text-align": "center"
+		}
+	});
 
-		const $logo = jQuery("<img>", {
-			src: horizonalLogoUrl,
-			alt: "Laguna Chinese Baptist Church",
-			css: {
-				"margin-bottom": "1.5em",
-				"width": "250px"
-			}
-		})
+	const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
 
-		const $logoWrapper = jQuery("<div>", {
-			id: "lcbcLogoWrapper",
-			css: {
-				"text-align": "center"
-			}
-		});
+	const $logo = jQuery("<img>", {
+		src: horizonalLogoUrl,
+		alt: "Laguna Chinese Baptist Church",
+		css: {
+			"margin-bottom": "1.5em",
+			"width": "250px"
+		}
+	})
 
-		$logoWrapper.append($logo);
+	$logoWrapper.append($logo);
 
-		jQuery(".turnstile-form").before($logoWrapper);
-	}
+	jQuery(".turnstile-form").before($logoWrapper);
 });
 
 observer.observe(
