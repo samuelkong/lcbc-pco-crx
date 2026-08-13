@@ -1,6 +1,9 @@
 header.Header {
 	display: none !important;
 }
+label strong {
+	color: #137C71;
+}
 #lcbcLanguageChanger {
 	position: fixed;
 	right: 0.5em;
