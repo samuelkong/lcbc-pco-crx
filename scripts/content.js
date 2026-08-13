@@ -129,75 +129,85 @@ const languageButton = function(label, locale) {
 	});
 }
 
-const observer = new MutationObserver((mutations, observer) => {
+let onloadChangeNeeded = 2;
+
+const onloadObserver = new MutationObserver((mutations, observer) => {
 	if (!chrome.runtime?.id) {
 		observer.disconnect();
-
 		return;
 	}
 
-	if (jQuery("#lcbcLogoWrapper").length) {
+	if (onloadChangeNeeded == 0) {
 		observer.disconnect();
-
+		console.log("Observer Stopped");
 		return;
 	}
 
 	// Add back church logo
 
-	const $logoWrapper = jQuery("<div>", {
-		id: "lcbcLogoWrapper",
-		css: {
-			"text-align": "center"
-		}
-	});
+	if (jQuery(".turnstile-form").length && !jQuery("#lcbcLogoWrapper").length) {
+		const $logoWrapper = jQuery("<div>", {
+			id: "lcbcLogoWrapper",
+			css: {
+				"text-align": "center"
+			}
+		});
 
-	const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
+		const horizonalLogoUrl = chrome.runtime.getURL("images/logo-en.png");
 
-	const $logo = jQuery("<img>", {
-		src: horizonalLogoUrl,
-		alt: "Laguna Chinese Baptist Church",
-		css: {
-			"margin-bottom": "1.5em",
-			"width": "250px"
-		}
-	})
+		const $logo = jQuery("<img>", {
+			src: horizonalLogoUrl,
+			alt: "Laguna Chinese Baptist Church",
+			css: {
+				"margin-bottom": "1.5em",
+				"width": "250px"
+			}
+		})
 
-	$logoWrapper.append($logo);
+		$logoWrapper.append($logo);
 
-	jQuery(".turnstile-form").before($logoWrapper);
+		jQuery(".turnstile-form").before($logoWrapper);
+
+		onloadChangeNeeded--;
+	}
 
 	// Add language changer
 
-	const $languageWrapper = jQuery("<div>", {
-		css: {
-			"position": "fixed",
-			"right": "0.5em",
-			"text-align": "center",
-			"top": "5em",
-			"z-index": "9999"
-		}
-	});
+	if (jQuery("#lcbcLogoWrapper").length && !jQuery("#lcbcLanguageChanger").length) {
+		const $languageWrapper = jQuery("<div>", {
+			id: "lcbcLanguageChanger",
+			css: {
+				"position": "fixed",
+				"right": "0.5em",
+				"text-align": "center",
+				"top": "5em",
+				"z-index": "9999"
+			}
+		});
 
-	$logoWrapper.before($languageWrapper);
+		jQuery("#lcbcLogoWrapper").before($languageWrapper);
 
-	const languageIconUrl = chrome.runtime.getURL("images/language.png");
+		const languageIconUrl = chrome.runtime.getURL("images/language.png");
 
-	const $languageIcon = jQuery("<img>", {
-		src: languageIconUrl,
-		alt: "Language Selector",
-		css: {
-			"width": "48px"
-		}
-	});
+		const $languageIcon = jQuery("<img>", {
+			src: languageIconUrl,
+			alt: "Language Selector",
+			css: {
+				"width": "48px"
+			}
+		});
 
-	$languageWrapper.append($languageIcon);
+		$languageWrapper.append($languageIcon);
 
-	$languageWrapper.append(languageButton("ENGLISH", "en-US"));
-	$languageWrapper.append(languageButton("繁體中文", "zh-HK"));
-	$languageWrapper.append(languageButton("简体中文", "zh-CN"));
+		$languageWrapper.append(languageButton("ENGLISH", "en-US"));
+		$languageWrapper.append(languageButton("繁體中文", "zh-HK"));
+		$languageWrapper.append(languageButton("简体中文", "zh-CN"));
+
+		onloadChangeNeeded--;
+	}
 });
 
-observer.observe(
+onloadObserver.observe(
 	document.body, {
 		childList: true,
 		subtree: true
