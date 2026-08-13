@@ -174,14 +174,7 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 
 	if (jQuery("#lcbcLogoWrapper").length && !jQuery("#lcbcLanguageChanger").length) {
 		const $languageWrapper = jQuery("<div>", {
-			id: "lcbcLanguageChanger",
-			css: {
-				"position": "fixed",
-				"right": "0.5em",
-				"text-align": "center",
-				"top": "35%",
-				"z-index": "9999"
-			}
+			id: "lcbcLanguageChanger"
 		});
 
 		jQuery("#lcbcLogoWrapper").before($languageWrapper);
@@ -190,10 +183,7 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 
 		const $languageIcon = jQuery("<img>", {
 			src: languageIconUrl,
-			alt: "Language Selector",
-			css: {
-				"width": "48px"
-			}
+			alt: "Language Selector"
 		});
 
 		$languageWrapper.append($languageIcon);
