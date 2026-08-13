@@ -139,7 +139,6 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 
 	if (onloadChangeNeeded == 0) {
 		observer.disconnect();
-		console.log("Observer Stopped");
 		return;
 	}
 
