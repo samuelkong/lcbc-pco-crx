@@ -180,7 +180,7 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 				"position": "fixed",
 				"right": "0.5em",
 				"text-align": "center",
-				"top": "5em",
+				"top": "35%",
 				"z-index": "9999"
 			}
 		});
