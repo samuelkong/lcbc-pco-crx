@@ -1,7 +1,7 @@
 jQuery.noConflict();
 
 let locale = "en-US";
-let onloadChangeNeeded = 2;
+let onloadChangeNeeded = 3;
 
 const changeLanguage = function() {
 
@@ -175,6 +175,25 @@ const onloadAddLogo = function() {
 	onloadChangeNeeded--;
 }
 
+const onloadDisableNonMobilePhones = function() {
+	const selectSelector = 'select[id^="phone_type_"]';
+	const optionSelector = selectSelector + " option";
+
+	if (!jQuery(selectSelector).length) {
+		return;
+	}
+
+	if (jQuery(optionSelector).eq(3).is(":disabled")) {
+		return;
+	}
+
+	jQuery(optionSelector).eq(1).prop("disabled", true);
+	jQuery(optionSelector).eq(2).prop("disabled", true);
+	jQuery(optionSelector).eq(3).prop("disabled", true);
+
+	onloadChangeNeeded--;
+}
+
 const onloadObserver = new MutationObserver((mutations, observer) => {
 	if (!chrome.runtime?.id) {
 		observer.disconnect();
@@ -188,6 +207,7 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 
 	onloadAddLogo();
 	onloadAddLanguageChanger();
+	onloadDisableNonMobilePhones();
 });
 
 const setLocale = function(newLocale) {
