@@ -118,11 +118,6 @@ const languageButton = function(label, locale) {
 		type: "button",
 		text: label,
 		class: "btn secondary-btn minor-btn",
-		css: {
-			"clear": "left",
-			"display": "block",
-			"margin-bottom": "0.3em"
-		},
 		click: function() {
 			changeLanguage(locale);
 		}
