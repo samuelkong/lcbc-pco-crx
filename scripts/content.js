@@ -177,12 +177,8 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 			id: "lcbcLanguageChanger"
 		});
 
-		jQuery("#lcbcLogoWrapper").before($languageWrapper);
-
-		const languageIconUrl = chrome.runtime.getURL("images/language.png");
-
 		const $languageIcon = jQuery("<img>", {
-			src: languageIconUrl,
+			src: chrome.runtime.getURL("images/language.png"),
 			alt: "Language Selector"
 		});
 
@@ -191,6 +187,8 @@ const onloadObserver = new MutationObserver((mutations, observer) => {
 		$languageWrapper.append(languageButton("ENGLISH", "en-US"));
 		$languageWrapper.append(languageButton("繁體中文", "zh-HK"));
 		$languageWrapper.append(languageButton("简体中文", "zh-CN"));
+
+		jQuery("#lcbcLogoWrapper").before($languageWrapper);
 
 		onloadChangeNeeded--;
 	}
