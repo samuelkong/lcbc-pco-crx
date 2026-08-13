@@ -46,6 +46,11 @@ class LanguageUtil {
 			"zh-HK": "性别",
 			"zh-CN": "性别"
 		},
+		"home": {
+			"en-US": "Home",
+			"zh-HK": "家",
+			"zh-CN": "家"
+		},
 		"household-instructions": {
 			"en-US": '• Please <strong>Add Child</strong> for <em>each</em> child you plan to check-in.<br>• Please <strong>Add Adult</strong> if you want your spouse to be able to check-in and check-out the children.',
 			"zh-HK": '• 請為<em>每位</em>計劃辦理入住的兒童添<strong>加兒童</strong>資訊。<br>• 如果您希望您的配偶能夠辦理兒童的入住和退房手續，請<strong>加成人</strong>資訊。',
@@ -86,6 +91,11 @@ class LanguageUtil {
 			"zh-HK": "否",
 			"zh-CN": "否"
 		},
+		"other": {
+			"en-US": "Other",
+			"zh-HK": "其他",
+			"zh-CN": "其他"
+		},
 		"select": {
 			"en-US": "Select…",
 			"zh-HK": "選擇。。。",
@@ -95,6 +105,11 @@ class LanguageUtil {
 			"en-US": "Submit",
 			"zh-HK": "提交",
 			"zh-CN": "提交"
+		},
+		"work": {
+			"en-US": "Work",
+			"zh-HK": "工作",
+			"zh-CN": "工作"
 		},
 		"yes": {
 			"en-US": "Yes",

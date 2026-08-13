@@ -26,59 +26,30 @@ const changeLanguage = function() {
 	jQuery("h1.h1").next().children().first().html(
 		"<br>" + LanguageUtil.get("form-instruction"));
 
-	// Name: Label
+	// Name
 
-	jQuery('label[for^="your_name_"]').contents().filter(function() {
-		return this.nodeType === Node.TEXT_NODE;
-	}).each(function() {
-		this.nodeValue = LanguageUtil.get("your-name");
-	});
+	changeLanguageLabel("your_name", "your-name");
 
-	// Name: Input
+	changeLanguageInputPlaceholder("your_name_1", "first-name");
+	changeLanguageInputPlaceholder("last_name", "last-name");
 
-	jQuery('input[id^="your_name_"]').attr(
-		"placeholder", LanguageUtil.get("first-name"));
-	jQuery("#last_name").attr(
-		"placeholder", LanguageUtil.get("last-name"));
+	// Email
 
-	// Email: Label
+	changeLanguageLabel("email_address", "email-address");
 
-	jQuery('label[for^="email_address_"]').contents().filter(function() {
-		return this.nodeType === Node.TEXT_NODE;
-	}).each(function() {
-		this.nodeValue = LanguageUtil.get("email-address");
-	});
+	// Phone
 
-	// Phone: Label
+	changeLanguageLabel("phone_number", "phone-number");
 
-	jQuery('label[for^="phone_number_"]').contents().filter(function() {
-		return this.nodeType === Node.TEXT_NODE;
-	}).each(function() {
-		this.nodeValue = LanguageUtil.get("phone-number");
-	});
+	changeLanguageFieldDescription("phone_type", "mobile-number-that-we-can-call");
 
-	// Phone: Description
+	changeLanguageSelect("phone_type", ["mobile", "home", "work", "other"]);
 
-	jQuery('label[for^="phone_number_"]').parent().next().children().first().html(
-		LanguageUtil.get("mobile-number-that-we-can-call"));
+	// Gender
 
-	// Phone: Select Options
+	changeLanguageLabel("gender", "gender");
 
-	jQuery('select[id^="phone_type_"] option').eq(0).text(LanguageUtil.get("mobile"));
-
-	// Gender: Label
-
-	jQuery('label[for^="gender_"]').contents().filter(function() {
-		return this.nodeType === Node.TEXT_NODE;
-	}).each(function() {
-		this.nodeValue = LanguageUtil.get("gender");
-	});
-
-	// Gender: Select Options
-
-	jQuery('select[id^="gender_"] option').eq(0).text(LanguageUtil.get("select"));
-	jQuery('select[id^="gender_"] option').eq(1).text(LanguageUtil.get("male"));
-	jQuery('select[id^="gender_"] option').eq(2).text(LanguageUtil.get("female"));
+	changeLanguageSelect("gender", ["select", "male", "female"]);
 
 	// Household: Description
 
@@ -91,20 +62,11 @@ const changeLanguage = function() {
 	jQuery('label[for^="household_"]').parent().next().next().next().text(
 		LanguageUtil.get("add-child"));
 
-	// Parent?: Label
+	// Parent?
 
-	jQuery('label[for^="dropdown_"]').contents().filter(function() {
-		return this.nodeType === Node.TEXT_NODE;
-	}).each(function() {
-		this.nodeValue = LanguageUtil.get(
-			"are-you-the-parent-guardian-of-the-children-listed-above");
-	});
+	changeLanguageLabel("dropdown", "are-you-the-parent-guardian-of-the-children-listed-above");
 
-	// Parent? : Selection Options
-
-	jQuery('select[id^="dropdown_"] option').eq(0).text(LanguageUtil.get("select"));
-	jQuery('select[id^="dropdown_"] option').eq(1).text(LanguageUtil.get("yes"));
-	jQuery('select[id^="dropdown_"] option').eq(2).text(LanguageUtil.get("no"));
+	changeLanguageSelect("dropdown", ["select", "yes", "no"]);
 
 	// Check-in instructions
 
@@ -114,6 +76,37 @@ const changeLanguage = function() {
 	// Submit button
 
 	jQuery('button[type="submit"]').text(LanguageUtil.get("submit"))
+}
+
+const changeLanguageFieldDescription = function(fieldIdPrefix, languageKey) {
+	const selector = 'label[for^="' + fieldIdPrefix + '_"]';
+
+	jQuery(selector).parent().next().children().first().text(
+		LanguageUtil.get(languageKey));
+}
+
+const changeLanguageInputPlaceholder = function(fieldId, languageKey) {
+	const selector = "#" + fieldId;
+
+	jQuery(selector).attr("placeholder", LanguageUtil.get(languageKey));
+}
+	
+const changeLanguageLabel = function(fieldIdPrefix, languageKey) {
+	const selector  = 'label[for^="' + fieldIdPrefix + '_"]';
+
+	jQuery(selector).contents().filter(function() {
+		return this.nodeType === Node.TEXT_NODE;
+	}).each(function() {
+		this.nodeValue = LanguageUtil.get(languageKey);
+	});
+}
+
+const changeLanguageSelect = function(fieldIdPrefix, languageKeys) {
+	selector = 'select[id^="' + fieldIdPrefix + '_"] option';
+
+	jQuery(selector).each(function(index){
+		jQuery(this).text(LanguageUtil.get(languageKeys[index]));
+	});
 }
 
 const languageButton = function(label, locale) {
