@@ -72,6 +72,30 @@ const changeLanguage = function() {
 		.last()
 		.text(LanguageUtil.get("add-child"));
 
+	// Household: Adult
+
+	changeLanguageLabel("adult_name", "name");
+
+	changeLanguageLabel("adult_email_address", "email-address");
+
+	changeLanguageLabel("household_adult_phone_number", "email-address");
+
+	changeLanguageLabel("household_adult_gender", "gender");
+	changeLanguageSelect("household_adult_gender", ["select", "male", "female"]);
+
+	// Household: Child
+
+	changeLanguageLabel("child_name", "name");
+
+	changeLanguageLabel("household_child_gender", "gender");
+	changeLanguageSelect("household_child_gender", ["select", "male", "female"]);
+
+	changeLanguageLabel("household_child_birthday", "birthdate");
+
+	changeLanguageLabel("household_child_grade", "grade");
+
+	changeLanguageLabel("household_child_medical", "medical-notes");
+
 	// Parent?
 
 	changeLanguageLabel("dropdown", "are-you-the-parent-guardian-of-the-children-listed-above");

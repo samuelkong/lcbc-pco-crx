@@ -11,6 +11,11 @@ class LanguageUtil {
 			"zh-HK": "+ 加兒童",
 			"zh-CN": "+ 加儿童"
 		},
+		"birthdate": {
+			"en-US": "Birthdate",
+			"zh-HK": "出生日期",
+			"zh-CN": "出生日期"
+		},
 		"after-submitting-this-form": {
 			"en-US": "After submitting this form, please enter the last four digits of your phone number into one of the tablet/iPad to check-in your child and print their name tags.",
 			"zh-HK": "提交此表格後，請在平板電腦/iPad 上輸入您手機號碼的後四位數字，以便為您的孩子辦理簽到並列印他們的姓名標籤。",
@@ -46,6 +51,11 @@ class LanguageUtil {
 			"zh-HK": "性别",
 			"zh-CN": "性别"
 		},
+		"grade": {
+			"en-US": "Grade",
+			"zh-HK": "年級",
+			"zh-CN": "年级"
+		},
 		"home": {
 			"en-US": "Home",
 			"zh-HK": "家",
@@ -66,6 +76,11 @@ class LanguageUtil {
 			"zh-HK": "男",
 			"zh-CN": "男"
 		},
+		"medical-notes": {
+			"en-US": "Food allergies",
+			"zh-HK": "食物過敏",
+			"zh-CN": "食物过敏"
+		},
 		"mobile": {
 			"en-US": "Mobile",
 			"zh-HK": "手機",
@@ -85,6 +100,11 @@ class LanguageUtil {
 			"en-US": "Mobile number that we can call/text if there's an emergency.",
 			"zh-HK": "緊急情況下我們可以撥打/發送簡訊的手機號碼。",
 			"zh-CN": "紧急情况下可供我们致电或发送短信的手机号码。"
+		},
+		"name": {
+			"en-US": "Name",
+			"zh-HK": "名字",
+			"zh-CN": "姓名"
 		},
 		"no": {
 			"en-US": "No",
@@ -125,6 +145,10 @@ class LanguageUtil {
 	};
 
 	static get(key) {
+		if (!Object.hasOwn(this.dictionary, key)) {
+			console.log("Error: Unknown language key = " + key);
+		}
+
 		return this.dictionary[key][locale];
 	}
 }
