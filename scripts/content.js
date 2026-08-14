@@ -30,8 +30,8 @@ const changeLanguage = function() {
 
 	LanguageSwitcher.updateLabel("your_name_", "your-name");
 
-	LanguageSwitcher.updatePlaceholder("your_name_1", "first-name");
-	LanguageSwitcher.updatePlaceholder("last_name", "last-name");
+	LanguageSwitcher.updatePlaceholderById("your_name_1", "first-name");
+	LanguageSwitcher.updatePlaceholderByLabel("last_name", "last-name");
 
 	// Email
 
@@ -77,6 +77,8 @@ const changeLanguage = function() {
 	jQuery("div.mb-2.action-drawer h3 span").first().text(LanguageUtil.get("adult"));
 
 	LanguageSwitcher.updateLabel("adult_name_", "name");
+	LanguageSwitcher.updatePlaceholderById("adult_name_", "first-name");
+	//LanguageSwitcher.updatePlaceholderByLabel("last_name", "last-name");
 
 	LanguageSwitcher.updateLabel("adult_email_address_", "email-address");
 
@@ -90,6 +92,8 @@ const changeLanguage = function() {
 	LanguageSwitcher.updateChildHeader()
 
 	LanguageSwitcher.updateLabel("child_name_", "name");
+	LanguageSwitcher.updatePlaceholderById("child_name_", "first-name");
+	//LanguageSwitcher.updatePlaceholderByLabel("last_name", "last-name");
 
 	LanguageSwitcher.updateLabel("household_child_gender_", "gender");
 	LanguageSwitcher.updateSelect("household_child_gender_", ["select", "male", "female"]);

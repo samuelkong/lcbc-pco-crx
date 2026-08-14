@@ -17,10 +17,19 @@ class LanguageSwitcher {
 		this.#updateTextNode(selector, languageKey);
 	}
 
-	static updatePlaceholder(fieldId, languageKey) {
-		const selector = "#" + fieldId;
+	static updatePlaceholderById(idPrefix, languageKey) {
+		const selector = 'input[id^="' + idPrefix + '"]';
 
 		jQuery(selector).attr("placeholder", LanguageUtil.get(languageKey));
+	}
+
+	static updatePlaceholderByLabel(forAttr, languageKey) {
+		const selector = 'label[for^="' + forAttr + '"]';
+
+		jQuery(selector)
+			.next('div')
+			.find('input')
+			.attr("placeholder", LanguageUtil.get(languageKey));
 	}
 
 	static updateSelect = function(idPrefix, languageKeys) {
