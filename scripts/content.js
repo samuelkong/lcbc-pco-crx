@@ -57,10 +57,20 @@ const changeLanguage = function() {
 
 	// Household: Buttons
 
-	jQuery('label[for^="household_"]').parent().next().next().text(
-		LanguageUtil.get("add-adult"));
-	jQuery('label[for^="household_"]').parent().next().next().next().text(
-		LanguageUtil.get("add-child"));
+	const $addAdultBtn = jQuery('label[for^="household_"]')
+		.parent()
+		.nextAll("button.mr-1")
+		.first();
+
+	if ($addAdultBtn.length) {
+		$addAdultBtn.text(LanguageUtil.get("add-adult"));
+	}
+
+	jQuery('label[for^="household_"]')
+		.parent()
+		.nextAll("button")
+		.last()
+		.text(LanguageUtil.get("add-child"));
 
 	// Parent?
 
