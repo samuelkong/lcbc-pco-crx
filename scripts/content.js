@@ -19,12 +19,11 @@ const changeLanguage = function() {
 
 	// Form title
 
-	jQuery("h1.h1").text(LanguageUtil.get("new-children-registration"));
+	LanguageSwitcher.updateFormTitle();
 
 	// Form description/instruction
 
-	jQuery("h1.h1").next().children().first().html(
-		"<br>" + LanguageUtil.get("form-instruction"));
+	LanguageSwitcher.updateFormDescription();
 
 	// Name
 
@@ -53,7 +52,7 @@ const changeLanguage = function() {
 
 	// Household: Description
 
-	jQuery('label[for^="household_"]').first().html(LanguageUtil.get("household-instructions"));
+	LanguageSwitcher.updateHouseholdLabel();
 
 	// Household: Buttons
 
@@ -124,7 +123,7 @@ const changeLanguage = function() {
 
 	// Submit button
 
-	jQuery('button[type="submit"]').text(LanguageUtil.get("submit"))
+	LanguageSwitcher.updateButtonSubmit();
 }
 
 const changeLanguageInputPlaceholder = function(fieldId, languageKey) {

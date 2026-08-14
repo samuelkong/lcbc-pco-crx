@@ -1,5 +1,9 @@
 class LanguageSwitcher {
 
+	static updateButtonSubmit() {
+		jQuery('button[type="submit"]').text(LanguageUtil.get("submit"))
+	}
+
 	static updateChildHeader() {
 		this.#updateTextNode("div.my-2.action-drawer h3", "child");
 	}
@@ -10,6 +14,18 @@ class LanguageSwitcher {
 		jQuery(selector).text(LanguageUtil.get(languageKey));
 	}
 
+	static updateFormDescription() {
+		jQuery('div[data-testid="header-description"] div')
+			.html("<br>" + LanguageUtil.get("form-instruction"));
+	}
+
+	static updateFormTitle() {
+		jQuery("h1.h1").text(LanguageUtil.get("new-children-registration"));
+	}
+
+	static updateHouseholdLabel() {
+		jQuery('label[for^="household_"]').first().html(LanguageUtil.get("household-instructions"));
+	}
 
 	static updateLabel(forAttrPrefix, languageKey) {
 		const selector  = 'label[for^="' + forAttrPrefix + '"]';
