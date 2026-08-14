@@ -11,6 +11,11 @@ class LanguageUtil {
 			"zh-HK": "+ 加兒童",
 			"zh-CN": "+ 加儿童"
 		},
+		"adult": {
+			"en-US": "Adult",
+			"zh-HK": "成人",
+			"zh-CN": "成人"
+		},
 		"after-submitting-this-form": {
 			"en-US": "After submitting this form, please enter the last four digits of your phone number into one of the tablet/iPad to check-in your child and print their name tags.",
 			"zh-HK": "提交此表格後，請在平板電腦/iPad 上輸入您手機號碼的後四位數字，以便為您的孩子辦理簽到並列印他們的姓名標籤。",
@@ -35,6 +40,11 @@ class LanguageUtil {
 			"en-US": "Birthdate",
 			"zh-HK": "出生日期",
 			"zh-CN": "出生日期"
+		},
+		"child": {
+			"en-US": "Child",
+			"zh-HK": "兒童",
+			"zh-CN": "儿童"
 		},
 		"day": {
 			"en-US": "Day",

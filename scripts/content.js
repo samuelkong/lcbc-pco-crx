@@ -74,6 +74,8 @@ const changeLanguage = function() {
 
 	// Household: Adult
 
+	jQuery("div.mb-2.action-drawer h3 span").first().text(LanguageUtil.get("adult"));
+
 	changeLanguageLabel("adult_name_", "name");
 
 	changeLanguageLabel("adult_email_address_", "email-address");
@@ -84,6 +86,12 @@ const changeLanguage = function() {
 	changeLanguageSelect("household_adult_gender_", ["select", "male", "female"]);
 
 	// Household: Child
+
+	jQuery("div.my-2.action-drawer h3").contents().filter(function() {
+		return this.nodeType === Node.TEXT_NODE;
+	}).each(function() {
+		this.nodeValue = LanguageUtil.get("child");
+	});
 
 	changeLanguageLabel("child_name_", "name");
 
