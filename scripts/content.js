@@ -7,15 +7,7 @@ const changeLanguage = function() {
 
 	// Logo
 
-	const enLogoUrl = chrome.runtime.getURL("images/logo-en.png");
-	const zhLogoUrl = chrome.runtime.getURL("images/logo-zh.png");
-
-	if (locale == "en-US") {
-		jQuery("#lcbcLogoWrapper img").attr("src", enLogoUrl);
-	}
-	else {
-		jQuery("#lcbcLogoWrapper img").attr("src", zhLogoUrl);
-	}
+	LanguageSwitcher.updateLogo();
 
 	// Form title
 
@@ -56,24 +48,11 @@ const changeLanguage = function() {
 
 	// Household: Buttons
 
-	const $addAdultBtn = jQuery('label[for^="household_"]')
-		.parent()
-		.nextAll("button.mr-1")
-		.first();
-
-	if ($addAdultBtn.length) {
-		$addAdultBtn.text(LanguageUtil.get("add-adult"));
-	}
-
-	jQuery('label[for^="household_"]')
-		.parent()
-		.nextAll("button")
-		.last()
-		.text(LanguageUtil.get("add-child"));
+	LanguageSwitcher.updateAddButtons();
 
 	// Household: Adult
 
-	jQuery("div.mb-2.action-drawer h3 span").first().text(LanguageUtil.get("adult"));
+	LanguageSwitcher.updateAdultHeader();
 
 	LanguageSwitcher.updateLabel("adult_name_", "name");
 	LanguageSwitcher.updatePlaceholderById("adult_name_", "first-name");

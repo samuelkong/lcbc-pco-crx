@@ -1,5 +1,26 @@
 class LanguageSwitcher {
 
+	static updateAddButtons() {
+		const $addAdultBtn = jQuery('label[for^="household_"]')
+			.parent()
+			.nextAll("button.mr-1")
+			.first();
+
+		if ($addAdultBtn.length) {
+			$addAdultBtn.text(LanguageUtil.get("add-adult"));
+		}
+
+		jQuery('label[for^="household_"]')
+			.parent()
+			.nextAll("button")
+			.last()
+			.text(LanguageUtil.get("add-child"));
+	}
+
+	static updateAdultHeader() {
+		jQuery("div.mb-2.action-drawer h3 span").first().text(LanguageUtil.get("adult"));
+	}
+
 	static updateButtonSubmit() {
 		jQuery('button[type="submit"]').text(LanguageUtil.get("submit"))
 	}
@@ -31,6 +52,18 @@ class LanguageSwitcher {
 		const selector  = 'label[for^="' + forAttrPrefix + '"]';
 
 		this.#updateTextNode(selector, languageKey);
+	}
+
+	static updateLogo() {
+		const enLogoUrl = chrome.runtime.getURL("images/logo-en.png");
+		const zhLogoUrl = chrome.runtime.getURL("images/logo-zh.png");
+
+		if (locale == "en-US") {
+			jQuery("#lcbcLogoWrapper img").attr("src", enLogoUrl);
+		}
+		else {
+			jQuery("#lcbcLogoWrapper img").attr("src", zhLogoUrl);
+		}
 	}
 
 	static updatePlaceholderById(idPrefix, languageKey) {
