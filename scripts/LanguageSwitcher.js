@@ -5,10 +5,9 @@ class LanguageSwitcher {
 	}
 
 	static updateDescription(forAttrPrefix, languageKey) {
-		const selector = 'label[for^="' + forAttrPrefix + '"]';
+		const selector = 'div:has(label[for^="' + forAttrPrefix + '"]) + p > div';
 
-		jQuery(selector).parent().next().children().first().text(
-			LanguageUtil.get(languageKey));
+		jQuery(selector).text(LanguageUtil.get(languageKey));
 	}
 
 
