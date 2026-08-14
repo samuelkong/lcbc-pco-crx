@@ -1,5 +1,7 @@
 class LanguageSwitcher {
 
+	static locale = "en-US";
+
 	static update() {
 
 		// Logo
@@ -155,7 +157,7 @@ class LanguageSwitcher {
 		const enLogoUrl = chrome.runtime.getURL("images/logo-en.png");
 		const zhLogoUrl = chrome.runtime.getURL("images/logo-zh.png");
 
-		if (locale == "en-US") {
+		if (this.locale == "en-US") {
 			jQuery("#lcbcLogoWrapper img").attr("src", enLogoUrl);
 		}
 		else {

@@ -235,6 +235,6 @@ class LanguageUtil {
 			return key;
 		}
 
-		return this.dictionary[key][locale];
+		return this.dictionary[key][LanguageSwitcher.locale];
 	}
 }

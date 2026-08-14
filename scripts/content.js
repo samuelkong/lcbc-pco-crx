@@ -1,6 +1,5 @@
 jQuery.noConflict();
 
-let locale = "en-US";
 let onloadChangeNeeded = 4;
 
 const languageButton = function(label, locale) {
@@ -9,7 +8,7 @@ const languageButton = function(label, locale) {
 		text: label,
 		class: "btn secondary-btn minor-btn",
 		click: function() {
-			setLocale(locale);
+			LanguageSwitcher.locale = locale;
 			LanguageSwitcher.update();
 		}
 	});
