@@ -91,8 +91,15 @@ const changeLanguage = function() {
 	changeLanguageSelect("household_child_gender_", ["select", "male", "female"]);
 
 	changeLanguageLabel("household_child_birthday_", "birthdate");
+	changeLanguageSelect("household_child_birthday_month", [
+		"month", "january", "february", "march", "april", "may", "june",
+		"july", "august", "september", "october", "november", "december"
+	]);
+	changeLanguageSelect("household_child_birthday_day", ["day"]);
+	changeLanguageSelect("household_child_birthday_year", ["year"]);
 
 	changeLanguageLabel("household_child_grade_", "grade");
+	changeLanguageSelect("household_child_grade_", ["select"]);
 
 	changeLanguageLabel("household_child_medical_", "medical-notes");
 

@@ -11,25 +11,50 @@ class LanguageUtil {
 			"zh-HK": "+ 加兒童",
 			"zh-CN": "+ 加儿童"
 		},
-		"birthdate": {
-			"en-US": "Birthdate",
-			"zh-HK": "出生日期",
-			"zh-CN": "出生日期"
-		},
 		"after-submitting-this-form": {
 			"en-US": "After submitting this form, please enter the last four digits of your phone number into one of the tablet/iPad to check-in your child and print their name tags.",
 			"zh-HK": "提交此表格後，請在平板電腦/iPad 上輸入您手機號碼的後四位數字，以便為您的孩子辦理簽到並列印他們的姓名標籤。",
 			"zh-CN": "提交此表格后，请在平板电脑或 iPad 上输入您电话号码的后四位数字，以便为孩子办理签到并打印姓名牌。"
+		},
+		"april": {
+			"en-US": "April",
+			"zh-HK": "四月",
+			"zh-CN": "四月"
 		},
 		"are-you-the-parent-guardian-of-the-children-listed-above": {
 			"en-US": "Are you the parent/guardian of the children listed above?",
 			"zh-HK": "您是上述兒童的家長/監護人嗎？",
 			"zh-CN": "您是上述儿童的父母或监护人吗？"
 		},
+		"august": {
+			"en-US": "August",
+			"zh-HK": "八月",
+			"zh-CN": "八月"
+		},
+		"birthdate": {
+			"en-US": "Birthdate",
+			"zh-HK": "出生日期",
+			"zh-CN": "出生日期"
+		},
+		"day": {
+			"en-US": "Day",
+			"zh-HK": "日",
+			"zh-CN": "日"
+		},
+		"december": {
+			"en-US": "December",
+			"zh-HK": "十二月",
+			"zh-CN": "十二月"
+		},
 		"email-address": {
 			"en-US": "Email address",
 			"zh-HK": "電子郵件",
 			"zh-CN": "电子邮件"
+		},
+		"february": {
+			"en-US": "February",
+			"zh-HK": "二月",
+			"zh-CN": "二月"
 		},
 		"female": {
 			"en-US": "Female",
@@ -66,6 +91,21 @@ class LanguageUtil {
 			"zh-HK": '• 請為<em>每位</em>計劃辦理入住的兒童添<strong>加兒童</strong>資訊。<br>• 如果您希望您的配偶能夠辦理兒童的入住和退房手續，請<strong>加成人</strong>資訊。',
 			"zh-CN": '• 请为<em>每一位</em>计划办理签到（check-in）的儿童添<strong>加儿童</strong>信息。<br>• 如果您希望配偶也能为孩子办理签到和签退（check-out），请添<strong>加成人</strong>信息。'
 		},
+		"january": {
+			"en-US": "January",
+			"zh-HK": "一月",
+			"zh-CN": "一月"
+		},
+		"july": {
+			"en-US": "July",
+			"zh-HK": "七月",
+			"zh-CN": "七月"
+		},
+		"june": {
+			"en-US": "June",
+			"zh-HK": "六月",
+			"zh-CN": "六月"
+		},
 		"last-name": {
 			"en-US": "Last name",
 			"zh-HK": "姓氏",
@@ -76,6 +116,16 @@ class LanguageUtil {
 			"zh-HK": "男",
 			"zh-CN": "男"
 		},
+		"march": {
+			"en-US": "March",
+			"zh-HK": "三月",
+			"zh-CN": "三月"
+		},
+		"may": {
+			"en-US": "May",
+			"zh-HK": "五月",
+			"zh-CN": "五月"
+		},
 		"medical-notes": {
 			"en-US": "Food allergies",
 			"zh-HK": "食物過敏",
@@ -85,6 +135,11 @@ class LanguageUtil {
 			"en-US": "Mobile",
 			"zh-HK": "手機",
 			"zh-CN": "手机"
+		},
+		"month": {
+			"en-US": "Month",
+			"zh-HK": "月",
+			"zh-CN": "月"
 		},
 		"new-children-registration": {
 			"en-US": "New Children Registration",
@@ -111,6 +166,16 @@ class LanguageUtil {
 			"zh-HK": "否",
 			"zh-CN": "否"
 		},
+		"november": {
+			"en-US": "November",
+			"zh-HK": "十一月",
+			"zh-CN": "十一月"
+		},
+		"october": {
+			"en-US": "October",
+			"zh-HK": "十月",
+			"zh-CN": "十月"
+		},
 		"other": {
 			"en-US": "Other",
 			"zh-HK": "其他",
@@ -121,6 +186,11 @@ class LanguageUtil {
 			"zh-HK": "選擇。。。",
 			"zh-CN": "选择。。。"
 		},
+		"september": {
+			"en-US": "September",
+			"zh-HK": "九月",
+			"zh-CN": "九月"
+		},
 		"submit": {
 			"en-US": "Submit",
 			"zh-HK": "提交",
@@ -130,6 +200,11 @@ class LanguageUtil {
 			"en-US": "Work",
 			"zh-HK": "工作",
 			"zh-CN": "工作"
+		},
+		"year": {
+			"en-US": "Year",
+			"zh-HK": "年",
+			"zh-CN": "年"
 		},
 		"yes": {
 			"en-US": "Yes",
