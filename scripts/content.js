@@ -124,10 +124,6 @@ const onloadUpdateHouseholdDescription = function() {
 	onloadChangeNeeded--;
 }
 
-const setLocale = function(newLocale) {
-	locale = newLocale;
-}
-
 onloadObserver.observe(
 	document.body, {
 		childList: true,
