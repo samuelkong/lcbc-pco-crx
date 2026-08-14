@@ -43,13 +43,13 @@ const changeLanguage = function() {
 
 	changeLanguageFieldDescription("phone_number_", "mobile-number-that-we-can-call");
 
-	changeLanguageSelect("phone_type_", ["mobile", "home", "work", "other"]);
+	LanguageSwitcher.updateSelect("phone_type_", ["mobile", "home", "work", "other"]);
 
 	// Gender
 
 	LanguageSwitcher.updateLabel("gender_", "gender");
 
-	changeLanguageSelect("gender_", ["select", "male", "female"]);
+	LanguageSwitcher.updateSelect("gender_", ["select", "male", "female"]);
 
 	// Household: Description
 
@@ -83,7 +83,7 @@ const changeLanguage = function() {
 	LanguageSwitcher.updateLabel("household_adult_phone_number_", "email-address");
 
 	LanguageSwitcher.updateLabel("household_adult_gender_", "gender");
-	changeLanguageSelect("household_adult_gender_", ["select", "male", "female"]);
+	LanguageSwitcher.updateSelect("household_adult_gender_", ["select", "male", "female"]);
 
 	// Household: Child
 
@@ -92,18 +92,18 @@ const changeLanguage = function() {
 	LanguageSwitcher.updateLabel("child_name_", "name");
 
 	LanguageSwitcher.updateLabel("household_child_gender_", "gender");
-	changeLanguageSelect("household_child_gender_", ["select", "male", "female"]);
+	LanguageSwitcher.updateSelect("household_child_gender_", ["select", "male", "female"]);
 
 	LanguageSwitcher.updateLabel("household_child_birthday_", "birthdate");
-	changeLanguageSelect("household_child_birthday_month", [
+	LanguageSwitcher.updateSelect("household_child_birthday_month", [
 		"month", "january", "february", "march", "april", "may", "june",
 		"july", "august", "september", "october", "november", "december"
 	]);
-	changeLanguageSelect("household_child_birthday_day", ["day"]);
-	changeLanguageSelect("household_child_birthday_year", ["year"]);
+	LanguageSwitcher.updateSelect("household_child_birthday_day", ["day"]);
+	LanguageSwitcher.updateSelect("household_child_birthday_year", ["year"]);
 
 	LanguageSwitcher.updateLabel("household_child_grade_", "grade");
-	changeLanguageSelect("household_child_grade_", ["select"]);
+	LanguageSwitcher.updateSelect("household_child_grade_", ["select"]);
 
 	LanguageSwitcher.updateLabel("household_child_medical_", "medical-notes");
 
@@ -111,7 +111,7 @@ const changeLanguage = function() {
 
 	LanguageSwitcher.updateLabel("dropdown_", "are-you-the-parent-guardian-of-the-children-listed-above");
 
-	changeLanguageSelect("dropdown_", ["select", "yes", "no"]);
+	LanguageSwitcher.updateSelect("dropdown_", ["select", "yes", "no"]);
 
 	// Check-in instructions
 
@@ -134,18 +134,6 @@ const changeLanguageInputPlaceholder = function(fieldId, languageKey) {
 	const selector = "#" + fieldId;
 
 	jQuery(selector).attr("placeholder", LanguageUtil.get(languageKey));
-}
-
-const changeLanguageSelect = function(fieldIdPrefix, languageKeys) {
-	selector = 'select[id^="' + fieldIdPrefix + '"]';
-
-	jQuery(selector).each(function() {
-		jQuery(this).find("option").each(function(index){
-			if (languageKeys[index]) {
-				jQuery(this).text(LanguageUtil.get(languageKeys[index]));
-			}
-		});
-	});
 }
 
 const languageButton = function(label, locale) {

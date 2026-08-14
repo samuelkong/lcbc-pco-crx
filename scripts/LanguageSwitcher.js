@@ -10,6 +10,18 @@ class LanguageSwitcher {
 		this.#updateTextNode(selector, languageKey);
 	}
 
+	static updateSelect = function(idPrefix, languageKeys) {
+		const selector = 'select[id^="' + idPrefix + '"]';
+
+		jQuery(selector).each(function() {
+			jQuery(this).find("option").each(function(index){
+				if (languageKeys[index]) {
+					jQuery(this).text(LanguageUtil.get(languageKeys[index]));
+				}
+			});
+		});
+	}
+
 	static #updateTextNode(selector, languageKey) {
 		jQuery(selector).contents().filter(function() {
 			return this.nodeType === Node.TEXT_NODE;
