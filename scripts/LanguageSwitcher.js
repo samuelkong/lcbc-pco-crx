@@ -17,6 +17,12 @@ class LanguageSwitcher {
 		this.#updateTextNode(selector, languageKey);
 	}
 
+	static updatePlaceholder(fieldId, languageKey) {
+		const selector = "#" + fieldId;
+
+		jQuery(selector).attr("placeholder", LanguageUtil.get(languageKey));
+	}
+
 	static updateSelect = function(idPrefix, languageKeys) {
 		const selector = 'select[id^="' + idPrefix + '"]';
 

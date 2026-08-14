@@ -30,8 +30,8 @@ const changeLanguage = function() {
 
 	LanguageSwitcher.updateLabel("your_name_", "your-name");
 
-	changeLanguageInputPlaceholder("your_name_1", "first-name");
-	changeLanguageInputPlaceholder("last_name", "last-name");
+	LanguageSwitcher.updatePlaceholder("your_name_1", "first-name");
+	LanguageSwitcher.updatePlaceholder("last_name", "last-name");
 
 	// Email
 
