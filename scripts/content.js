@@ -87,11 +87,7 @@ const changeLanguage = function() {
 
 	// Household: Child
 
-	jQuery("div.my-2.action-drawer h3").contents().filter(function() {
-		return this.nodeType === Node.TEXT_NODE;
-	}).each(function() {
-		this.nodeValue = LanguageUtil.get("child");
-	});
+	LanguageSwitcher.updateChildHeader()
 
 	LanguageSwitcher.updateLabel("child_name_", "name");
 
