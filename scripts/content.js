@@ -140,7 +140,9 @@ const changeLanguageSelect = function(fieldIdPrefix, languageKeys) {
 
 	jQuery(selector).each(function() {
 		jQuery(this).find("option").each(function(index){
-			jQuery(this).text(LanguageUtil.get(languageKeys[index]));
+			if (languageKeys[index]) {
+				jQuery(this).text(LanguageUtil.get(languageKeys[index]));
+			}
 		});
 	});
 }
