@@ -112,10 +112,12 @@ const changeLanguageLabel = function(fieldIdPrefix, languageKey) {
 }
 
 const changeLanguageSelect = function(fieldIdPrefix, languageKeys) {
-	selector = 'select[id^="' + fieldIdPrefix + '_"] option';
+	selector = 'select[id^="' + fieldIdPrefix + '_"]';
 
-	jQuery(selector).each(function(index){
-		jQuery(this).text(LanguageUtil.get(languageKeys[index]));
+	jQuery(selector).each(function() {
+		jQuery(this).find("option").each(function(index){
+			jQuery(this).text(LanguageUtil.get(languageKeys[index]));
+		});
 	});
 }
 
