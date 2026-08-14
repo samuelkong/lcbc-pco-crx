@@ -53,7 +53,7 @@ const changeLanguage = function() {
 
 	// Household: Description
 
-	jQuery('label[for^="household_"]').html(LanguageUtil.get("household-instructions"));
+	jQuery('label[for^="household_"]').first().html(LanguageUtil.get("household-instructions"));
 
 	// Household: Buttons
 
