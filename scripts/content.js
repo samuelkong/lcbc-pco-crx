@@ -3,113 +3,6 @@ jQuery.noConflict();
 let locale = "en-US";
 let onloadChangeNeeded = 4;
 
-const changeLanguage = function() {
-
-	// Logo
-
-	LanguageSwitcher.updateLogo();
-
-	// Form title
-
-	LanguageSwitcher.updateFormTitle();
-
-	// Form description/instruction
-
-	LanguageSwitcher.updateFormDescription();
-
-	// Name
-
-	LanguageSwitcher.updateLabel("your_name_", "your-name");
-
-	LanguageSwitcher.updatePlaceholderById("your_name_1", "first-name");
-	LanguageSwitcher.updatePlaceholderByLabel("last_name", "last-name");
-
-	// Email
-
-	LanguageSwitcher.updateLabel("email_address_", "email-address");
-
-	// Phone
-
-	LanguageSwitcher.updateLabel("phone_number_", "phone-number");
-
-	LanguageSwitcher.updateDescription("phone_number_", "mobile-number-that-we-can-call");
-
-	LanguageSwitcher.updateSelect("phone_type_", ["mobile", "home", "work", "other"]);
-
-	// Gender
-
-	LanguageSwitcher.updateLabel("gender_", "gender");
-
-	LanguageSwitcher.updateSelect("gender_", ["select", "male", "female"]);
-
-	// Household: Description
-
-	LanguageSwitcher.updateHouseholdLabel();
-
-	// Household: Buttons
-
-	LanguageSwitcher.updateAddButtons();
-
-	// Household: Adult
-
-	LanguageSwitcher.updateAdultHeader();
-
-	LanguageSwitcher.updateLabel("adult_name_", "name");
-	LanguageSwitcher.updatePlaceholderById("adult_name_", "first-name");
-	//LanguageSwitcher.updatePlaceholderByLabel("last_name", "last-name");
-
-	LanguageSwitcher.updateLabel("adult_email_address_", "email-address");
-
-	LanguageSwitcher.updateLabel("household_adult_phone_number_", "email-address");
-
-	LanguageSwitcher.updateLabel("household_adult_gender_", "gender");
-	LanguageSwitcher.updateSelect("household_adult_gender_", ["select", "male", "female"]);
-
-	// Household: Child
-
-	LanguageSwitcher.updateChildHeader()
-
-	LanguageSwitcher.updateLabel("child_name_", "name");
-	LanguageSwitcher.updatePlaceholderById("child_name_", "first-name");
-	//LanguageSwitcher.updatePlaceholderByLabel("last_name", "last-name");
-
-	LanguageSwitcher.updateLabel("household_child_gender_", "gender");
-	LanguageSwitcher.updateSelect("household_child_gender_", ["select", "male", "female"]);
-
-	LanguageSwitcher.updateLabel("household_child_birthday_", "birthdate");
-	LanguageSwitcher.updateSelect("household_child_birthday_month", [
-		"month", "january", "february", "march", "april", "may", "june",
-		"july", "august", "september", "october", "november", "december"
-	]);
-	LanguageSwitcher.updateSelect("household_child_birthday_day", ["day"]);
-	LanguageSwitcher.updateSelect("household_child_birthday_year", ["year"]);
-
-	LanguageSwitcher.updateLabel("household_child_grade_", "grade");
-	LanguageSwitcher.updateSelect("household_child_grade_", ["select"]);
-
-	LanguageSwitcher.updateLabel("household_child_medical_", "medical-notes");
-
-	// Parent?
-
-	LanguageSwitcher.updateLabel("dropdown_", "are-you-the-parent-guardian-of-the-children-listed-above");
-
-	LanguageSwitcher.updateSelect("dropdown_", ["select", "yes", "no"]);
-
-	// Check-in instructions
-
-	LanguageSwitcher.updateSectionHeading("after-submitting-this-form", "");
-
-	// Submit button
-
-	LanguageSwitcher.updateButtonSubmit();
-}
-
-const changeLanguageInputPlaceholder = function(fieldId, languageKey) {
-	const selector = "#" + fieldId;
-
-	jQuery(selector).attr("placeholder", LanguageUtil.get(languageKey));
-}
-
 const languageButton = function(label, locale) {
 	return jQuery("<button>", {
 		type: "button",
@@ -117,7 +10,7 @@ const languageButton = function(label, locale) {
 		class: "btn secondary-btn minor-btn",
 		click: function() {
 			setLocale(locale);
-			changeLanguage();
+			LanguageSwitcher.update();
 		}
 	});
 }

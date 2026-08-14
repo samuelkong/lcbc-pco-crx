@@ -1,5 +1,102 @@
 class LanguageSwitcher {
 
+	static update() {
+
+		// Logo
+
+		this.updateLogo();
+
+		// Form title and description
+
+		this.updateFormTitle();
+
+		this.updateFormDescription();
+
+		// Name
+
+		this.updateLabel("your_name_", "your-name");
+
+		this.updatePlaceholderById("your_name_1", "first-name");
+		this.updatePlaceholderByLabel("last_name", "last-name");
+
+		// Email
+
+		this.updateLabel("email_address_", "email-address");
+
+		// Phone
+
+		this.updateLabel("phone_number_", "phone-number");
+
+		this.updateDescription("phone_number_", "mobile-number-that-we-can-call");
+
+		this.updateSelect("phone_type_", ["mobile", "home", "work", "other"]);
+
+		// Gender
+
+		this.updateLabel("gender_", "gender");
+
+		this.updateSelect("gender_", ["select", "male", "female"]);
+
+		// Household
+
+		this.updateHouseholdLabel();
+
+		this.updateAddButtons();
+
+		// Household: Add Adult
+
+		this.updateAdultHeader();
+
+		this.updateLabel("adult_name_", "name");
+		this.updatePlaceholderById("adult_name_", "first-name");
+		//this.updatePlaceholderByLabel("last_name", "last-name");
+
+		this.updateLabel("adult_email_address_", "email-address");
+
+		this.updateLabel("household_adult_phone_number_", "email-address");
+
+		this.updateLabel("household_adult_gender_", "gender");
+		this.updateSelect("household_adult_gender_", ["select", "male", "female"]);
+
+		// Household: Add Child
+
+		this.updateChildHeader()
+
+		this.updateLabel("child_name_", "name");
+		this.updatePlaceholderById("child_name_", "first-name");
+		//this.updatePlaceholderByLabel("last_name", "last-name");
+
+		this.updateLabel("household_child_gender_", "gender");
+		this.updateSelect("household_child_gender_", ["select", "male", "female"]);
+
+		this.updateLabel("household_child_birthday_", "birthdate");
+		this.updateSelect("household_child_birthday_month", [
+			"month", "january", "february", "march", "april", "may", "june",
+			"july", "august", "september", "october", "november", "december"
+		]);
+		this.updateSelect("household_child_birthday_day", ["day"]);
+		this.updateSelect("household_child_birthday_year", ["year"]);
+
+		this.updateLabel("household_child_grade_", "grade");
+		this.updateSelect("household_child_grade_", ["select"]);
+
+		this.updateLabel("household_child_medical_", "medical-notes");
+
+		// Parent?
+
+		this.updateLabel("dropdown_", "are-you-the-parent-guardian-of-the-children-listed-above");
+
+		this.updateSelect("dropdown_", ["select", "yes", "no"]);
+
+		// Check-in instructions
+
+		this.updateSectionHeading("after-submitting-this-form", "");
+
+		// Submit button
+
+		this.updateButtonSubmit();
+	}
+
 	static updateAddButtons() {
 		const $addAdultBtn = jQuery('label[for^="household_"]')
 			.parent()
