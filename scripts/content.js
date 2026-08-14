@@ -118,8 +118,7 @@ const changeLanguage = function() {
 
 	// Check-in instructions
 
-	jQuery('h2.h2').last().next().children().first().text(
-		LanguageUtil.get("after-submitting-this-form"));
+	LanguageSwitcher.updateSectionHeading("after-submitting-this-form", "");
 
 	// Submit button
 

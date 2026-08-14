@@ -231,6 +231,8 @@ class LanguageUtil {
 	static get(key) {
 		if (!Object.hasOwn(this.dictionary, key)) {
 			console.log("Error: Unknown language key = " + key);
+
+			return key;
 		}
 
 		return this.dictionary[key][locale];

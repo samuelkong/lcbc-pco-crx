@@ -48,6 +48,15 @@ class LanguageSwitcher {
 			.attr("placeholder", LanguageUtil.get(languageKey));
 	}
 
+	static updateSectionHeading(headingLanguageKey, descriptionLanguageKey) {
+		jQuery('div.section-header')
+			.find('h2')
+			.html(LanguageUtil.get(headingLanguageKey));
+		jQuery('div.section-header')
+			.find('span div')
+			.html(LanguageUtil.get(descriptionLanguageKey));
+	}
+
 	static updateSelect = function(idPrefix, languageKeys) {
 		const selector = 'select[id^="' + idPrefix + '"]';
 
