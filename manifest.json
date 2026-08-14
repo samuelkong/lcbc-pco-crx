@@ -41,7 +41,7 @@
 			"matches": ["https://lagunabaptist.churchcenter.com/people/forms/*"],
 			"js" : [
 				"lib/jquery-4.0.0.min.js",
-				"scripts/language_util.js",
+				"scripts/LanguageUtil.js",
 				"scripts/content.js"
 			]
 		}

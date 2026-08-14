@@ -1,4 +1,3 @@
-
 class LanguageUtil {
 	static dictionary = {
 		"add-adult": {
