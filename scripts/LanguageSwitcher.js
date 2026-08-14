@@ -4,6 +4,14 @@ class LanguageSwitcher {
 		this.#updateTextNode("div.my-2.action-drawer h3", "child");
 	}
 
+	static updateDescription(forAttrPrefix, languageKey) {
+		const selector = 'label[for^="' + forAttrPrefix + '"]';
+
+		jQuery(selector).parent().next().children().first().text(
+			LanguageUtil.get(languageKey));
+	}
+
+
 	static updateLabel(forAttrPrefix, languageKey) {
 		const selector  = 'label[for^="' + forAttrPrefix + '"]';
 

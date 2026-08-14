@@ -41,7 +41,7 @@ const changeLanguage = function() {
 
 	LanguageSwitcher.updateLabel("phone_number_", "phone-number");
 
-	changeLanguageFieldDescription("phone_number_", "mobile-number-that-we-can-call");
+	LanguageSwitcher.updateDescription("phone_number_", "mobile-number-that-we-can-call");
 
 	LanguageSwitcher.updateSelect("phone_type_", ["mobile", "home", "work", "other"]);
 
@@ -121,13 +121,6 @@ const changeLanguage = function() {
 	// Submit button
 
 	jQuery('button[type="submit"]').text(LanguageUtil.get("submit"))
-}
-
-const changeLanguageFieldDescription = function(fieldIdPrefix, languageKey) {
-	const selector = 'label[for^="' + fieldIdPrefix + '"]';
-
-	jQuery(selector).parent().next().children().first().text(
-		LanguageUtil.get(languageKey));
 }
 
 const changeLanguageInputPlaceholder = function(fieldId, languageKey) {
