@@ -8,7 +8,6 @@
 	// General
 
 	"description": "Customization for new children registration form.",
-	//"default_locale": "en",
 	"icons": {
 		"16": "images/icon-16.png",
 		"32": "images/icon-32.png",
@@ -21,16 +20,11 @@
 	// UI & Action
 
 	"action": {
-		"default_icon": "images/icon-128.png",
-		"default_popup": "popup/popup.html"
+		"default_icon": "images/icon-128.png"
 	},
-	//"options_page": "",
-	//"options_ui": {},
-	//"side_panel": {},
 
 	// Background, Scripts & Net Request Rules
 
-	//"background": {},
 	"content_scripts": [
 		{
 			"matches": ["https://lagunabaptist.churchcenter.com/people/forms/*"],
@@ -47,21 +41,6 @@
 			]
 		}
 	],
-	//"declarative_net_request": {},
-
-	// Permissions & Security
-
-	//"permissions": [],
-	//"optional_permissions": [],
-	//"host_permissions": [
-	//	"https://*.example.com/*"
-	//],
-	//"optional_host_permissions": [
-	//	"https://*/*"
-	//],
-	//"content_security_policy": {
-	//	"extension_pages": "script-src 'self'; object-src 'self';"
-	//},
 
 	// Resources & Shortcuts
 
@@ -71,11 +50,4 @@
 			"resources": ["images/*"]
 		}
 	]
-	//"commands": {},
-
-	// System & Deployment Requirements
-
-	//"minimum_chrome_version": "102",
-	//"key": "PUBLIC_KEY_FOR_FIXED_EXTENSION_ID",
-	//"update_url": "https://clients2.google.com/service/update2/crxcrx"
 }
