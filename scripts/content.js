@@ -132,5 +132,5 @@ onloadObserver.observe(
 );
 
 jQuery(document).on('click', 'div.mt-3:has(label[for^="household_"]) button', function() {
-	setTimeout(() => LanguageSwitcher.update(), 100);
+	setTimeout(() => LanguageSwitcher.update(), 0);
 });
