@@ -77,8 +77,8 @@ class LanguageUtil {
 		},
 		"form-instruction": {
 			"en-US": "Please start by filling in your information as the <strong>adult/parent</strong> of the child.",
-			"zh-HK": "請先填寫您作為孩子<strong>監護人/家長</strong>的資料。",
-			"zh-CN": "请先填写您作为儿童的<strong>成年人/家长</strong>一方的个人信息。"
+			"zh-HK": "請先填寫<strong>家長</strong>一方的個人資料。",
+			"zh-CN": "请先填写<strong>家长</strong>一方的个人信息。"
 		},
 		"gender": {
 			"en-US": "Gender",
@@ -97,7 +97,7 @@ class LanguageUtil {
 		},
 		"household-instructions": {
 			"en-US": '• Please <strong>Add Child</strong> for <em>each</em> child you plan to check-in.<br>• Please <strong>Add Adult</strong> if you want your spouse to be able to check-in and check-out the children.',
-			"zh-HK": '• 請為<em>每位</em>計劃辦理入住的兒童添<strong>加兒童</strong>資訊。<br>• 如果您希望您的配偶能夠辦理兒童的入住和退房手續，請<strong>加成人</strong>資訊。',
+			"zh-HK": '• 請為<em>每位</em>計劃辦理簽到的兒童添<strong>加兒童</strong>資訊。<br>• 如果您希望您的配偶能夠辦理兒童的签到和签退，請<strong>加成人</strong>資訊。',
 			"zh-CN": '• 请为<em>每一位</em>计划办理签到（check-in）的儿童添<strong>加儿童</strong>信息。<br>• 如果您希望配偶也能为孩子办理签到和签退（check-out），请添<strong>加成人</strong>信息。'
 		},
 		"january": {
@@ -137,8 +137,8 @@ class LanguageUtil {
 		},
 		"medical-notes": {
 			"en-US": "Food allergies",
-			"zh-HK": "食物過敏",
-			"zh-CN": "食物过敏"
+			"zh-HK": "過敏的食物",
+			"zh-CN": "过敏的食物"
 		},
 		"mobile": {
 			"en-US": "Mobile",
