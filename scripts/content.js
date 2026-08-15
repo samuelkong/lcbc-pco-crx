@@ -117,9 +117,9 @@ const onloadUpdateHouseholdDescription = function() {
 		return;
 	}
 
-	$householdLabel.html(LanguageUtil.get("household-instructions"));
-
 	$householdDescription.hide();
+
+	setTimeout(() => LanguageSwitcher.update(), 100);
 
 	onloadChangeNeeded--;
 }
